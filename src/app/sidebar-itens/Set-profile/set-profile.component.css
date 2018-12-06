@@ -1,0 +1,14 @@
+.thumbnails {
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 250px;
+    height: 220px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.img {
+    max-width:100%;
+}

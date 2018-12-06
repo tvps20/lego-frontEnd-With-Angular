@@ -1,0 +1,221 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Lista de Sets</h4>
+                        <p class="card-category">Sets cadastrados</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Set
+                                    </th>
+                                    <th>
+                                        Ano
+                                    </th>
+                                    <th>
+                                        Peças
+                                    </th>
+                                    <th>
+                                        Preço
+                                    </th>
+                                    <th class="text-right">
+                                        Ação
+                                    </th>
+                                </thead>
+                                <tbody *ngFor="let set of sets">
+                                    <tr>
+                                        <td>
+                                            {{ set.nome }}
+                                        </td>
+                                        <td>
+                                            {{ set.ano }}
+                                        </td>
+                                        <td>
+                                            {{ set.listaDePecas.length }}
+                                        </td>
+                                        <td class="text-primary">
+                                            {{ set.preco }}
+                                        </td>
+                                        <td class="text-right">
+                                            <!-- <button mat-raised-button type="button" matTooltip="Editar Set"
+                                                [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">edit</i>
+                                            </button> -->
+                                            <button mat-raised-button type="button" matTooltip="Remove"
+                                                [matTooltipPosition]="'above'" (click)="deletaSet(set)" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Lista de Peças</h4>
+                        <p class="card-category">Peças Cadastradas</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Código
+                                    </th>
+                                    <th>
+                                        Cor
+                                    </th>
+                                    <th>
+                                        Descrição
+                                    </th>
+                                    <th>
+                                        Set
+                                    </th>
+                                    <th class="text-right">
+                                        Ação
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let peca of pecas">
+                                        <td>
+                                            {{ peca.numPeca }}
+                                        </td>
+                                        <td>
+                                            {{ peca.cor }}
+                                        </td>
+                                        <td>
+                                            {{ peca.descricao }}
+                                        </td>
+                                        <td class="text-primary">
+                                            {{ peca.nomeDoSet }}
+                                        </td>
+                                        <td class="text-right">
+                                            <!-- <button mat-raised-button type="button" matTooltip="Editar Peça"
+                                                [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">edit</i>
+                                            </button> -->
+                                            <button mat-raised-button type="button" matTooltip="Remove"
+                                                [matTooltipPosition]="'above'" (click)="deletaPeca(peca)" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </td>
+                                    </tr>                              
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Lista de Modelos</h4>
+                        <p class="card-category">Modelos cadastrados</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Modelo
+                                    </th>
+                                    <th>
+                                        Conteudo
+                                    </th>
+                                    <th class="text-right">
+                                        Ação
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let modelo of modelos">
+                                        <td>
+                                            {{ modelo.nome }}
+                                        </td>
+                                        <td>
+                                            {{ modelo.nome }}
+                                        </td>
+                                        <td class="text-right">
+                                            <!-- <button mat-raised-button type="button" matTooltip="Editar Modelo"
+                                                [matTooltipPosition]="'above'" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">edit</i>
+                                            </button> -->
+                                            <button mat-raised-button type="button" matTooltip="Remove"
+                                                [matTooltipPosition]="'above'" (click)="deletaModelo(modelo)" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Historico de Compras</h4>
+                        <p class="card-category">Compras realizadas</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Set
+                                    </th>
+                                    <th>
+                                        Preço
+                                    </th>
+                                    <th>
+                                        Data
+                                    </th>
+                                    <th class="text-right">
+                                        Ação
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let historico of historicosCompras">
+                                        <td>
+                                            {{ historico.set.nome }}
+                                        </td>
+                                        <td class="text-primary">
+                                            {{ historico.set.preco }}
+                                        </td>
+                                        <td>
+                                            {{ historico.createdAt }}
+                                        </td>
+                                        <td class="text-right">
+                                            <button mat-raised-button type="button" matTooltip="Remove"
+                                                [matTooltipPosition]="'above'" (click)="deletaHistorico(historico)" class="btn btn-danger btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

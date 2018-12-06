@@ -1,0 +1,59 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Lista de Desejo</h4>
+                        <p class="card-category">Set que ainda não possui</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Set
+                                    </th>
+                                    <th>
+                                        Ano
+                                    </th>
+                                    <th>
+                                        Peças
+                                    </th>
+                                    <th>
+                                        Preço
+                                    </th>
+                                    <th>
+                                        Comprar
+                                    </th>
+                                </thead>
+                                <tbody *ngFor="let set of sets">
+                                    <tr>
+                                        <td>
+                                            {{ set.nome }}
+                                        </td>
+                                        <td>
+                                            {{ set.ano }}
+                                        </td>
+                                        <td>
+                                            {{ set.listaDePecas.length }}
+                                        </td>
+                                        <td class="text-primary">
+                                            {{ set.preco }}
+                                        </td>
+                                        <td class="td-actions ">
+                                            <button mat-raised-button type="button" matTooltip="Realizar Compra"
+                                                [matTooltipPosition]="'above'" (click)="comprarSet(set)" style="margin-left: 15px;" class="btn btn-primary btn-link btn-sm btn-just-icon">
+                                                <i class="material-icons">local_offer</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

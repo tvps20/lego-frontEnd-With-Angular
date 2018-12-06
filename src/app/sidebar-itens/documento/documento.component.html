@@ -1,0 +1,45 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Gerar Documento</h4>
+                        <p class="card-category">Documento gerado em PDF</p>
+                    </div>
+                    <div class="card-body">
+                        <form #documentoForm="ngForm" (ngSubmit)="documentoPeca()">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Nome do documento" name="nome" [(ngModel)]="documento.nome" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                        <!-- <div class="select-wrapper" [className]="selectSet.errors ? 'select-erro-white' : 'select--white'">
+                                            <select name="select" [(ngModel)]="documento.modeloId" required #selectDocumento="ngModel">
+                                                <option *ngFor="let modelo of listaDeModelos" [value]="modelo.id">{{ modelo.nome }}</option>
+                                            </select>
+                                        </div>
+                                        <small *ngIf="selectSet.errors" class="">Campo Obrigatório</small> -->
+        
+                                    <button href="#" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true" >
+                                        {{ modeloSelecionado ? modelo.nome : 'Modelo*' }}
+                                        <b class="caret"></b>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li *ngFor="let modelo of listaDeModelos"><a (click)="selecionarModelo(modelo)">{{ modelo.nome }}</a></li>
+                                    </ul>          
+                                </div>
+                            </div>
+
+
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" [disabled]="(!documentoForm.valid && !modeloSelecionado)">Gerar</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
